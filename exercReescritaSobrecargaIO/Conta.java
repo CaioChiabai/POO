@@ -21,6 +21,7 @@ public class Conta {
         System.out.println("Digite o numero da conta:");
         this.numero = teclado.next();
         this.titular = new Pessoa();
+        System.out.println("Digite a data de criacao da conta");
         this.criacao = new Data();
         this.gerente = gerente;
         this.saldo = 0;
