@@ -12,7 +12,7 @@ public class Banco {
         Pessoa p4 = new Pessoa("João", "234.567.890-00", 'M',dtNascP4);
 
         Gerente ger1 = new Gerente();
-        Gerente ger2 = new Gerente("Mario", "111.111.111-00",'M',dtNascGer2, "101010");
+        Gerente ger2 = new Gerente("Mario", "111.111.111-00",'M',dtNascGer2, "101010", "senha");
 
         ContaCorrente cc1 = new ContaCorrente(ger1);
         ContaCorrente cc2 = new ContaCorrente("1234-5", p3, ger2, dtCriacao1);
@@ -27,28 +27,19 @@ public class Banco {
         cc2.extrato();
         System.out.println();
 
-        System.out.println("Deposito de 10000 na conta corrente 1");
         cc1.depositar(10000);
-        System.out.println();
         cc1.transferir(4000, cc2);
-        System.out.println();
         cc1.transferir(3000,cp1);
-        System.out.println();
         cc2.transferir(1000, cp2);
 
-        System.out.println("Metodo disponivel conta corrente 1");
         System.out.println(cc1.disponivel());
-        System.out.println("Alterando o limite da conta corrente 1");
         cc1.alterarLimite();
-        System.out.println("Metodo disponivel conta corrente 1");
         System.out.println(cc1.disponivel());
+
         System.out.println();
 
-        System.out.println("Metodo disponivel conta corrente 2");
         System.out.println(cc2.disponivel());
-        System.out.println("Alterando o limite da conta corrente 2");
-        cc2.alterarLimite("123456", 12000);
-        System.out.println("Metodo disponivel conta 2");
+        cc2.alterarLimite("senha", 12000);
         System.out.println(cc2.disponivel());
 
         System.out.println("\n" + "Teste da Conta Poupança:");
@@ -67,7 +58,6 @@ public class Banco {
         }
 
         System.out.println();
-        System.out.println("Metodo sacar conta poupança 1");
         cp1.sacar(cp1.saldo);
         System.out.println(cp1.disponivel());
     }

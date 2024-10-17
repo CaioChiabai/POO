@@ -4,10 +4,10 @@ public class Gerente extends Pessoa {
     String matricula, senha;
     Scanner teclado = new Scanner(System.in);
 
-    Gerente(String nome, String CPF, char sexo, Data dtnasc, String matricula){
+    Gerente(String nome, String CPF, char sexo, Data dtnasc, String matricula, String senha){
         super(nome, CPF, sexo, dtnasc);
         this.matricula = matricula;
-        this.senha = "123456";
+        this.senha = senha;
     }
 
     Gerente(){
